@@ -7,6 +7,7 @@
       imports = [
         self.nixosModules.helix
         self.nixosModules.fish
+        self.nixosModules.direnv
       ];
 
       nix.settings.experimental-features = [
