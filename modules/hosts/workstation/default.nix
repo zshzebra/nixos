@@ -14,6 +14,7 @@
       self.nixosModules.tailscale
       self.nixosModules.homeManager
       self.nixosModules.userZshzebra
+      self.nixosModules.mcad
     ];
   };
 
