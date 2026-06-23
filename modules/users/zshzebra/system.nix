@@ -10,6 +10,7 @@
         extraGroups = [
           "wheel"
           "docker"
+          "libvirt"
         ];
         shell = pkgs.fish;
       };

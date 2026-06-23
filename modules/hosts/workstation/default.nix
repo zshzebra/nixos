@@ -16,6 +16,7 @@
       self.nixosModules.userZshzebra
       self.nixosModules.mcad
       self.nixosModules.three_dp
+      self.nixosModules.virt
     ];
   };
 
