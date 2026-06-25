@@ -88,6 +88,8 @@
         };
 
         nix-index.enable = true;
+
+        vesktop.enable = true;
       };
     };
 }
