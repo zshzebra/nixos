@@ -86,6 +86,8 @@
             theme = "Catppuccin Mocha";
           };
         };
+
+        nix-index.enable = true;
       };
     };
 }
