@@ -1,8 +1,12 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 {
   flake.homeModules.zshzebra =
     { pkgs, ... }:
     {
+      imports = [
+        self.homeModules.obs
+      ];
+
       home = {
         username = "zshzebra";
         homeDirectory = "/home/zshzebra";
