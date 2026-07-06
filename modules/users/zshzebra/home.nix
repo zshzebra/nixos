@@ -94,6 +94,11 @@
         nix-index.enable = true;
 
         vesktop.enable = true;
+
+        gnome-shell = {
+          enable = true;
+          extensions = [ { package = pkgs.gnomeExtensions.gsconnect; } ];
+        };
       };
     };
 }
