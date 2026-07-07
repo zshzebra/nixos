@@ -19,6 +19,7 @@
       self.nixosModules.three_dp
       self.nixosModules.virt
       self.nixosModules.vpforce
+      self.nixosModules.xpadneo
     ];
   };
 
