@@ -8,6 +8,7 @@
       self.nixosModules.workstationConfiguration
       self.nixosModules.workstationOpenrgb
       self.nixosModules.workstationNvidia
+      self.nixosModules.workstationMt7927
       self.nixosModules.cuda
       self.nixosModules.steam
       self.nixosModules.vr

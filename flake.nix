@@ -12,6 +12,9 @@
     import-tree.url = "github:vic/import-tree";
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    mt7927.url = "github:cmspam/mt7927-nixos";
+    mt7927.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

@@ -71,6 +71,43 @@
         "type": "github"
       }
     },
+    "mediatek-mt7927-dkms": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783265495,
+        "narHash": "sha256-GXbwhZbvfWE+w9TgMReAsAFL/WkbCokzEiIChmX2d00=",
+        "owner": "jetm",
+        "repo": "mediatek-mt7927-dkms",
+        "rev": "ad1f3e4d19fe540aaa1f449ddba86c65db9bfc82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jetm",
+        "repo": "mediatek-mt7927-dkms",
+        "type": "github"
+      }
+    },
+    "mt7927": {
+      "inputs": {
+        "mediatek-mt7927-dkms": "mediatek-mt7927-dkms",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783271713,
+        "narHash": "sha256-JtZeor98I5Tj4SMdcxna1XRzDsVYGTDZSOuJm21wOqw=",
+        "owner": "cmspam",
+        "repo": "mt7927-nixos",
+        "rev": "a344f8c115953d0ae994aea563280fe6062799fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cmspam",
+        "repo": "mt7927-nixos",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1781577229,
@@ -123,6 +160,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "mt7927": "mt7927",
         "nixpkgs": "nixpkgs",
         "temporary-nix": "temporary-nix",
         "wrapper-modules": "wrapper-modules"

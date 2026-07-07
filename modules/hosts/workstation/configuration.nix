@@ -1,4 +1,9 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  mt7927,
+  ...
+}:
 {
 
   flake.nixosModules.workstationConfiguration =
