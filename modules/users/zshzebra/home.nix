@@ -16,6 +16,7 @@
           (withNvidiaOffload prismlauncher)
           (withNvidiaOffload blender)
           inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+          devenv
         ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
