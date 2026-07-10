@@ -5,6 +5,7 @@
     {
       imports = [
         self.homeModules.obs
+        self.homeModules.helium
       ];
 
       home = {
