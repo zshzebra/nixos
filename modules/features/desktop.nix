@@ -1,4 +1,9 @@
-{ self, pkgs, ... }:
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   flake.nixosModules.desktop =
     { pkgs, ... }:
@@ -22,7 +27,10 @@
         pulse.enable = true;
       };
 
-      services.flatpak.enable = true;
+      services.flatpak = {
+        enable = true;
+        package = inputs.nixpkgs-flatpak.legacyPackages.${pkgs.system}.flatpak;
+      };
 
       programs.firefox.enable = true;
 

@@ -19,6 +19,9 @@
     helium.url = "github:AlvaroParker/helium-nix";
     helium.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Temporary workaround for issue #535787
+    nixpkgs-flatpak.url = "github:NixOS/nixpkgs/51effaf9783e0226281ad10e95a4af6c8a145316";
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
