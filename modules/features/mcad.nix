@@ -26,6 +26,15 @@
           vtk_9_5 = prev.vtk_9_5.overrideAttrs (old: {
             NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -fpermissive";
           });
+
+          freecad = prev.freecad.overrideAttrs (old: {
+            postInstall = ''
+              sed -i \
+                -e "s|^TryExec=.*freecad-thumbnailer.*|TryExec=$out/bin/freecad-thumbnailer|" \
+                -e "s|^Exec=.*freecad-thumbnailer|Exec=$out/bin/freecad-thumbnailer|" \
+                $out/share/thumbnailers/FreeCAD.thumbnailer
+            '';
+          });
         })
       ];
     };
