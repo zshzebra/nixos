@@ -20,6 +20,7 @@
       self.nixosModules.virt
       self.nixosModules.vpforce
       self.nixosModules.xpadneo
+      self.nixosModules.vesktop
     ];
   };
 
