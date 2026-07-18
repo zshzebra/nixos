@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.core =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
 
       imports = [
@@ -32,7 +32,6 @@
       };
 
       environment.systemPackages = with pkgs; [
-        vim
         helix
       ];
 

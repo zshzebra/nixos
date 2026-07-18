@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ ... }:
 {
   flake.nixosModules.helix =
     { pkgs, ... }:

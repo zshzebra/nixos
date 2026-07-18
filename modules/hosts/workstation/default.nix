@@ -4,9 +4,12 @@
   flake.nixosConfigurations.workstation = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.core
-      self.nixosModules.desktop
+      self.nixosModules.gnome
+      self.nixosModules.firefox
+      self.nixosModules.flatpak
       self.nixosModules.workstationConfiguration
       self.nixosModules.workstationOpenrgb
+      self.nixosModules.nvidia
       self.nixosModules.workstationNvidia
       self.nixosModules.workstationMt7927
       self.nixosModules.cuda

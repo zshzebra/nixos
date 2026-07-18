@@ -1,11 +1,6 @@
+{ self, ... }:
 {
-  self,
-  inputs,
-  pkgs,
-  ...
-}:
-{
-  flake.nixosModules.desktop =
+  flake.nixosModules.gnome =
     { pkgs, ... }:
     {
 
@@ -26,13 +21,6 @@
         enable = true;
         pulse.enable = true;
       };
-
-      services.flatpak = {
-        enable = true;
-        package = inputs.nixpkgs-flatpak.legacyPackages.${pkgs.system}.flatpak;
-      };
-
-      programs.firefox.enable = true;
 
       programs.dconf.profiles.user.databases = [
         {

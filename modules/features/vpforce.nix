@@ -1,7 +1,7 @@
-{ self, pkgs, ... }:
+{ ... }:
 {
   flake.nixosModules.vpforce =
-    { pkgs, ... }:
+    { ... }:
     {
       services.udev.extraRules = ''
         KERNEL=="hidraw*", ATTRS{idVendor}=="ffff", ATTRS{idProduct}=="2055", MODE="0660", GROUP="users"

@@ -1,7 +1,7 @@
-{ self, pkgs, ... }:
+{ ... }:
 {
   flake.nixosModules.tailscale =
-    { pkgs, ... }:
+    { ... }:
     {
       services.tailscale.enable = true;
       networking.nftables.enable = true;

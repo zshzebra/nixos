@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ ... }:
 {
   flake.nixosModules.three_dp =
     { pkgs, ... }:
