@@ -1,12 +1,13 @@
-{ self, inputs, ... }:
+{ self, mkHost, ... }:
 {
 
-  flake.nixosConfigurations.workstation = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.workstation = mkHost "unstable" {
     modules = [
       self.nixosModules.core
       self.nixosModules.gnome
       self.nixosModules.firefox
       self.nixosModules.flatpak
+      self.nixosModules.flatpakWorkaround
       self.nixosModules.workstationConfiguration
       self.nixosModules.workstationOpenrgb
       self.nixosModules.nvidia
@@ -23,7 +24,6 @@
       self.nixosModules.virt
       self.nixosModules.vpforce
       self.nixosModules.xpadneo
-      self.nixosModules.vesktop
     ];
   };
 

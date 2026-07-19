@@ -1,21 +1,14 @@
-{ self, ... }:
+{ ... }:
 {
-  flake.homeModules.zshzebra =
+  flake.homeModules.alex =
     { pkgs, ... }:
     {
-      imports = [
-        self.homeModules.obs
-        self.homeModules.helium
-      ];
-
       home = {
-        username = "zshzebra";
-        homeDirectory = "/home/zshzebra";
+        username = "alex";
+        homeDirectory = "/home/alex";
         stateVersion = "25.11";
 
         packages = with pkgs; [
-          (withNvidiaOffload prismlauncher)
-          (withNvidiaOffload blender)
           temporaryNix
           devenv
         ];
@@ -28,11 +21,13 @@
       programs = {
         home-manager.enable = true;
 
+        google-chrome.enable = true;
+
         git = {
           enable = true;
           settings = {
-            user.name = "zshzebra";
-            user.email = "ryder@retzlaff.family";
+            user.name = "alex";
+            user.email = "alex@unifyventures.vc";
             credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
           };
         };
@@ -40,7 +35,7 @@
         helix = {
           enable = true;
           settings = {
-            theme = "catppuccin_mocha";
+            theme = "catppuccin_latte";
             editor.cursor-shape = {
               normal = "block";
               insert = "bar";
@@ -55,7 +50,7 @@
           ];
         };
 
-        fish.enable = true;
+        zsh.enable = true;
 
         yazi = {
           enable = true;
@@ -68,32 +63,16 @@
           options = [ "--cmd cd" ];
         };
 
-        zed-editor = {
-          enable = true;
-          extensions = [
-            "catppuccin"
-            "nix"
-          ];
-          userSettings = {
-            theme = {
-              mode = "dark";
-              dark = "Catppuccin Mocha";
-            };
-          };
-        };
-
         ghostty = {
           enable = true;
 
           enableBashIntegration = true;
-          enableFishIntegration = true;
+          enableZshIntegration = true;
 
           settings = {
-            theme = "Catppuccin Mocha";
+            theme = "Catppuccin Latte";
           };
         };
-
-        nix-index.enable = true;
 
         vesktop.enable = true;
 
