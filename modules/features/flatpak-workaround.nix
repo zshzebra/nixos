@@ -7,7 +7,8 @@
     { pkgs, ... }:
     {
 
-      services.flatpak.package = inputs.nixpkgs-flatpak.legacyPackages.${pkgs.system}.flatpak;
+      services.flatpak.package =
+        inputs.nixpkgs-flatpak.legacyPackages.${pkgs.stdenv.hostPlatform.system}.flatpak;
 
     };
 }
