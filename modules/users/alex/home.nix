@@ -11,6 +11,7 @@
         packages = with pkgs; [
           temporaryNix
           devenv
+          insync
         ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
