@@ -53,7 +53,7 @@
         zsh = {
           enable = true;
           syntax-highlighting.enable = true;
-          autosuggestions.enable = true;
+          autosuggestion.enable = true;
           oh-my-zsh = {
             enable = true;
             theme = "robbyrussell";
