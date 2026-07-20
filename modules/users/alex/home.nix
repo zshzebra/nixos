@@ -50,7 +50,19 @@
           ];
         };
 
-        zsh.enable = true;
+        zsh = {
+          enable = true;
+          syntax-highlighting.enable = true;
+          autosuggestions.enable = true;
+          oh-my-zsh = {
+            enable = true;
+            theme = "robbyrussell";
+            plugins = [
+              "git"
+              "sudo"
+            ];
+          };
+        };
 
         yazi = {
           enable = true;
