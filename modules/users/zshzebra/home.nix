@@ -37,6 +37,11 @@
           };
         };
 
+        mergiraf = {
+          enable = true;
+          enableGitIntegration = true;
+        };
+
         helix = {
           enable = true;
           settings = {
