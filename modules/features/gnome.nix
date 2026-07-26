@@ -34,10 +34,18 @@
         }
       ];
 
+      programs.nautilus-open-any-terminal = {
+        enable = true;
+        # TODO: Don't hardcode terminal
+        terminal = "ghostty";
+      };
+
       environment.systemPackages = with pkgs; [
         resources
         gnomeExtensions.appindicator
         wl-clipboard
+
+        nautilus-open-any-terminal
       ];
 
     };
