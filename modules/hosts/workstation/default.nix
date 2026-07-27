@@ -4,6 +4,7 @@
   flake.nixosConfigurations.workstation = mkHost "unstable" {
     modules = [
       self.nixosModules.core
+      self.nixosModules.quickboot
       self.nixosModules.gnome
       self.nixosModules.firefox
       self.nixosModules.flatpak

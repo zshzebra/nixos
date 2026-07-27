@@ -4,7 +4,6 @@
     {
       config,
       lib,
-      pkgs,
       modulesPath,
       ...
     }:
@@ -17,9 +16,10 @@
       boot.initrd.availableKernelModules = [
         "nvme"
         "xhci_pci"
-        "ahci"
-        "thunderbolt"
-        "usb_storage"
+        # NOTE: Linux boots from none of these peripherals, SATA enumeration was spending 2.2s
+        # "ahci"
+        # "thunderbolt"
+        # "usb_storage"
         "usbhid"
         "sd_mod"
       ];
