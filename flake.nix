@@ -32,6 +32,8 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-stable"; # Only for desktop for the moment
 
+    zed.url = "github:zed-industries/zed/v1.13.0-pre";
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
