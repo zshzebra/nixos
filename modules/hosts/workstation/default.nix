@@ -18,6 +18,7 @@
       self.nixosModules.steam
       self.nixosModules.vr
       self.nixosModules.tailscale
+      self.nixosModules.wireguard
       self.nixosModules.homeManager
       self.nixosModules.userZshzebra
       self.nixosModules.mcad
