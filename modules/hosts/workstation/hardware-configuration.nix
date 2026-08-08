@@ -13,16 +13,20 @@
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
+      boot.initrd.includeDefaultModules = false;
       boot.initrd.availableKernelModules = [
         "nvme"
+        "raid0"
+        "md_mod"
+        "xfs"
         "xhci_pci"
-        # NOTE: Linux boots from none of these peripherals, SATA enumeration was spending 2.2s
-        # "ahci"
-        # "thunderbolt"
-        # "usb_storage"
         "usbhid"
-        "sd_mod"
+        "hid_generic"
+        "autofs"
+        "efivarfs"
       ];
+      # AHCI inits in series to avoid drive spin-up current, even without any SATA drives being present
+      boot.blacklistedKernelModules = [ "ahci" ];
       boot.initrd.kernelModules = [ ];
       boot.kernelModules = [ "kvm-amd" ];
       boot.extraModulePackages = [ ];
