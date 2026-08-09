@@ -29,10 +29,20 @@
 
       # Support for fan reading/control
       boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
-      boot.kernelModules = [ "nct6687" ];
       boot.extraModprobeConfig = ''
         options nct6687 fan_config=msi_alt1
       '';
+      # Driver is not critical, defer loading
+      systemd.services.nct6687-load = {
+        description = "Load nct6687 kernel module";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "multi-user.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          RemainAfterExit = true;
+          ExecStart = "${pkgs.kmod}/bin/modprobe nct6687";
+        };
+      };
 
       networking.hostName = "workstation-E40";
 
