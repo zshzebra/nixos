@@ -11,6 +11,7 @@
           "wheel"
           "docker"
           "libvirt"
+          "uinput"
         ];
         shell = pkgs.fish;
       };
