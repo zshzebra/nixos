@@ -46,6 +46,8 @@
         wl-clipboard
 
         nautilus-open-any-terminal
+        # I always want this with Gnome
+        file-roller
       ];
 
     };
