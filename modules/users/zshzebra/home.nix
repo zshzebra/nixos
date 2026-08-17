@@ -18,6 +18,9 @@
           (withNvidiaOffload blender)
           temporaryNix
           devenv
+
+          gnomeExtensions.gsconnect
+          gnomeExtensions.vicinae
         ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
@@ -102,9 +105,26 @@
 
         vesktop.enable = true;
 
+        vicinae = {
+          enable = true;
+
+          settings = {
+            theme = {
+              dark = {
+                name = "catppuccin-mocha";
+                icon_theme = "default";
+              };
+            };
+          };
+
+          systemd = {
+            enable = true;
+            autoStart = true;
+          };
+        };
+
         gnome-shell = {
           enable = true;
-          extensions = [ { package = pkgs.gnomeExtensions.gsconnect; } ];
         };
       };
     };
