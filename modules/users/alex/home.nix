@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.homeModules.alex =
     { pkgs, ... }:
@@ -9,7 +9,7 @@
         stateVersion = "25.11";
 
         packages = with pkgs; [
-          temporaryNix
+          inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
           devenv
           insync
         ];

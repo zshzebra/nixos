@@ -1,7 +1,7 @@
-{ self, mkHost, ... }:
+{ self, inputs, ... }:
 {
 
-  flake.nixosConfigurations.workstation = mkHost "unstable" {
+  flake.nixosConfigurations.workstation = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.core
       self.nixosModules.quickboot

@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.homeModules.zshzebra =
     { pkgs, ... }:
@@ -16,7 +16,7 @@
         packages = with pkgs; [
           (withNvidiaOffload prismlauncher)
           (withNvidiaOffload blender)
-          temporaryNix
+          inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
           devenv
 
           gnomeExtensions.gsconnect

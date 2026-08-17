@@ -1,7 +1,7 @@
-{ self, mkHost, ... }:
+{ self, inputs, ... }:
 {
 
-  flake.nixosConfigurations.desktop = mkHost "stable" {
+  flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.core
       self.nixosModules.desktopDisk
