@@ -6,6 +6,7 @@
       self.nixosModules.core
       self.nixosModules.quickboot
       self.nixosModules.gnome
+      self.nixosModules.pop
       self.nixosModules.firefox
       self.nixosModules.flatpak
       self.nixosModules.flatpakWorkaround
