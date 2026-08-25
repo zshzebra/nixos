@@ -2,6 +2,7 @@
 {
   flake.nixosModules.nvidia =
     {
+      lib,
       pkgs,
       config,
       ...
@@ -28,6 +29,9 @@
         enable = true;
       };
       virtualisation.docker.daemon.settings.features.cdi = true;
+      systemd.services.nvidia-container-toolkit-cdi-generator.before =
+        lib.mkIf config.virtualisation.docker.enable
+          [ "docker.service" ];
 
       environment.systemPackages = with pkgs; [
         nvtopPackages.nvidia
