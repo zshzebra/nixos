@@ -25,6 +25,7 @@
             (withNvidiaOffload blender)
             inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
             devenv
+            gh
           ]
           ++ lib.optionals (builtins.elem "gnome" desktopFeatures) [
             gnomeExtensions.gsconnect
