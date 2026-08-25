@@ -34,6 +34,14 @@
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
       };
 
+      qt = {
+        enable = true;
+        style = lib.mkIf (builtins.elem "plasma" desktopFeatures) {
+          name = "darkly";
+          package = [ pkgs.darkly ];
+        };
+      };
+
       xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
       programs = {
