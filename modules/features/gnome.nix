@@ -1,8 +1,9 @@
-{ self, ... }:
 {
   flake.nixosModules.gnome =
     { pkgs, ... }:
     {
+
+      desktop.features = [ "gnome" ];
 
       services.xserver.enable = true;
 
@@ -13,13 +14,6 @@
         enable = true;
         platformTheme = "gnome";
         style = "adwaita-dark";
-      };
-
-      services.xserver.xkb.layout = "us";
-
-      services.pipewire = {
-        enable = true;
-        pulse.enable = true;
       };
 
       programs.dconf.profiles.user.databases = [
@@ -43,7 +37,6 @@
       environment.systemPackages = with pkgs; [
         resources
         gnomeExtensions.appindicator
-        wl-clipboard
 
         nautilus-open-any-terminal
         # I always want this with Gnome

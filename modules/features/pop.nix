@@ -1,11 +1,18 @@
 {
   flake.nixosModules.pop =
-    { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [ gnomeExtensions.pop-shell ];
-
+      lib,
+      pkgs,
+      config,
+      ...
+    }:
+    {
       services.system76-scheduler = {
         enable = true;
       };
+
+      environment.systemPackages = lib.mkIf (builtins.elem "gnome" config.desktop.features) [
+        pkgs.gnomeExtensions.pop-shell
+      ];
     };
 }

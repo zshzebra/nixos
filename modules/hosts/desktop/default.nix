@@ -5,6 +5,7 @@
     modules = [
       self.nixosModules.core
       self.nixosModules.desktopDisk
+      self.nixosModules.desktop
       self.nixosModules.gnome
       self.nixosModules.flatpak
       self.nixosModules.desktopConfiguration

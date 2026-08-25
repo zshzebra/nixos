@@ -5,7 +5,8 @@
     modules = [
       self.nixosModules.core
       self.nixosModules.quickboot
-      self.nixosModules.gnome
+      self.nixosModules.desktop
+      self.nixosModules.plasma
       self.nixosModules.pop
       self.nixosModules.firefox
       self.nixosModules.flatpak

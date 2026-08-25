@@ -1,7 +1,12 @@
 { self, inputs, ... }:
 {
   flake.homeModules.zshzebra =
-    { pkgs, ... }:
+    {
+      pkgs,
+      lib,
+      desktopFeatures ? [ ],
+      ...
+    }:
     {
       imports = [
         self.homeModules.obs
@@ -13,15 +18,18 @@
         homeDirectory = "/home/zshzebra";
         stateVersion = "25.11";
 
-        packages = with pkgs; [
-          (withNvidiaOffload prismlauncher)
-          (withNvidiaOffload blender)
-          inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
-          devenv
-
-          gnomeExtensions.gsconnect
-          gnomeExtensions.vicinae
-        ];
+        packages =
+          with pkgs;
+          [
+            (withNvidiaOffload prismlauncher)
+            (withNvidiaOffload blender)
+            inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+            devenv
+          ]
+          ++ lib.optionals (builtins.elem "gnome" desktopFeatures) [
+            gnomeExtensions.gsconnect
+            gnomeExtensions.vicinae
+          ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
       };
@@ -166,9 +174,11 @@
           };
         };
 
-        gnome-shell = {
-          enable = true;
-        };
+        gnome-shell.enable = builtins.elem "gnome" desktopFeatures;
+
       };
+
+      services.kdeconnect.enable = builtins.elem "plasma" desktopFeatures;
+
     };
 }
