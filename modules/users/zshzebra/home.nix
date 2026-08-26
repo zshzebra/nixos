@@ -26,6 +26,9 @@
             inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
             devenv
             gh
+
+            adwaita-fonts
+            nerd-fonts.jetbrains-mono
           ]
           ++ lib.optionals (builtins.elem "gnome" desktopFeatures) [
             gnomeExtensions.gsconnect
@@ -34,6 +37,8 @@
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
       };
+
+      fonts.fontconfig.enable = true;
 
       qt = {
         enable = true;
