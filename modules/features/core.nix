@@ -36,6 +36,11 @@
       ];
 
       services.openssh.enable = true;
+      services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+      };
+
       networking.firewall.enable = false;
 
     };
