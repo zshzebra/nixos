@@ -88,7 +88,6 @@
 
         fish = {
           enable = true;
-          interactiveShellInit = "${pkgs.nix-your-shell}/bin/nix-your-shell fish | source";
         };
 
         yazi = {
@@ -193,6 +192,12 @@
         };
 
         gnome-shell.enable = builtins.elem "gnome" desktopFeatures;
+
+        nix-your-shell = {
+          enable = true;
+
+          enableFishIntegration = true;
+        };
 
       };
 
