@@ -11,6 +11,7 @@
       imports = [
         self.homeModules.obs
         self.homeModules.helium
+        inputs.nix-index-database.homeModules.default
       ];
 
       home = {
@@ -85,7 +86,10 @@
           ];
         };
 
-        fish.enable = true;
+        fish = {
+          enable = true;
+          interactiveShellInit = "${pkgs.nix-your-shell}/bin/nix-your-shell fish | source";
+        };
 
         yazi = {
           enable = true;
@@ -166,7 +170,7 @@
           };
         };
 
-        nix-index.enable = true;
+        nix-index-database.comma.enable = true;
 
         vesktop.enable = true;
 
