@@ -21,7 +21,7 @@
 
       boot.kernel.sysctl."kernel.sysrq" = 1;
 
-      boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelPackages = pkgs.linuxPackages_7_1;
       networking.networkmanager.enable = true;
 
       time.timeZone = "Australia/Sydney";
