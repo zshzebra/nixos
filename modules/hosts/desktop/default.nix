@@ -14,6 +14,7 @@
       self.nixosModules.steam
       self.nixosModules.homeManager
       self.nixosModules.userAlex
+      self.nixosModules.harmoniaHosts
     ];
   };
 

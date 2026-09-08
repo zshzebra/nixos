@@ -29,6 +29,7 @@
       self.nixosModules.vpforce
       self.nixosModules.xpadneo
       self.nixosModules.sunshine
+      self.nixosModules.harmonia
     ];
   };
 
