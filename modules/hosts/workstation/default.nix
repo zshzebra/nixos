@@ -30,6 +30,7 @@
       self.nixosModules.xpadneo
       self.nixosModules.sunshine
       self.nixosModules.harmonia
+      self.nixosModules.appimage
     ];
   };
 
