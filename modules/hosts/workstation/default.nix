@@ -31,6 +31,7 @@
       self.nixosModules.sunshine
       self.nixosModules.harmonia
       self.nixosModules.appimage
+      self.nixosModules.vial
     ];
   };
 
