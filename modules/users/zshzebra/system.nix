@@ -12,6 +12,7 @@
           "docker"
           "libvirt"
           "uinput"
+          "dialout"
         ];
         shell = pkgs.fish;
       };
