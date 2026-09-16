@@ -87,6 +87,14 @@
           };
         };
 
+        nix-index-database.comma.enable = true;
+
+        nix-your-shell = {
+          enable = true;
+
+          enableZshIntegration = true;
+        };
+
         vesktop.enable = true;
 
         gnome-shell = {
