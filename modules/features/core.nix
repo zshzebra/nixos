@@ -6,7 +6,6 @@
 
       imports = [
         self.nixosModules.helix
-        self.nixosModules.fish
         self.nixosModules.direnv
         self.nixosModules.nix-ld
       ];
