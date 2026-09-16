@@ -3,6 +3,10 @@
   flake.homeModules.alex =
     { pkgs, ... }:
     {
+      imports = [
+        inputs.nix-index-database.homeModules.default
+      ];
+
       home = {
         username = "alex";
         homeDirectory = "/home/alex";
