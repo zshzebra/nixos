@@ -39,6 +39,7 @@
         enable = true;
         nssmdns4 = true;
       };
+      services.resolved.enable = true;
 
       networking.firewall.enable = false;
 
