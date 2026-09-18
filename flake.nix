@@ -25,8 +25,6 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs"; # Only for desktop for the moment
 
-    zed.url = "github:zed-industries/zed/v1.13.0-pre";
-
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
