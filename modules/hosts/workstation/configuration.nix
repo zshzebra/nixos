@@ -28,7 +28,16 @@
       };
 
       # Support for fan reading/control
-      boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
+      boot.extraModulePackages = with config.boot.kernelPackages; [
+        (nct6687d.overrideAttrs (old: {
+          src = pkgs.fetchFromGitHub {
+            owner = "Fred78290";
+            repo = "nct6687d";
+            rev = "5f12dd1b0b3c8f79f31d309749862d986ff9efa7";
+            sha256 = "sha256-tg/k3x5gwGzSTUkS8sDfCE4yx+GgAg0s8PeaiWFnVIc=";
+          };
+        }))
+      ];
       boot.extraModprobeConfig = ''
         options nct6687 fan_config=msi_alt1
       '';
