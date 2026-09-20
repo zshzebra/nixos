@@ -17,6 +17,7 @@
           devenv
           insync
           bcompare
+          gh
         ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
