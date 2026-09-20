@@ -89,6 +89,7 @@
 
           settings = {
             theme = "Catppuccin Latte";
+            working-directory = "Work";
           };
         };
 
