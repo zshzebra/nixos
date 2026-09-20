@@ -16,6 +16,7 @@
           inputs.temporary-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
           devenv
           insync
+          bcompare
         ];
 
         sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
