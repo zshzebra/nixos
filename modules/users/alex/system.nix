@@ -11,6 +11,7 @@
           "wheel"
           "docker"
           "libvirt"
+          "video"
         ];
         shell = pkgs.zsh;
       };
