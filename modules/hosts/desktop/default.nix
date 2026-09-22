@@ -15,6 +15,7 @@
       self.nixosModules.homeManager
       self.nixosModules.userAlex
       self.nixosModules.harmoniaHosts
+      self.nixosModules.gnomeRdp
     ];
   };
 
