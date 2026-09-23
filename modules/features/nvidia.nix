@@ -20,6 +20,8 @@
       hardware.nvidia = {
         open = true;
 
+        powerManagement.enable = true;
+
         # NOTE: Use newer NVIDIA driver than 26.05 nixpkgs, until nixpkgs is updated
         # package = config.boot.kernelPackages.nvidiaPackages.latest;
         package = config.boot.kernelPackages.nvidiaPackages.mkDriver {

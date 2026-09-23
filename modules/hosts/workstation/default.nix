@@ -14,7 +14,6 @@
       self.nixosModules.workstationConfiguration
       self.nixosModules.workstationOpenrgb
       self.nixosModules.nvidia
-      self.nixosModules.workstationNvidia
       self.nixosModules.workstationMt7927
       self.nixosModules.cuda
       self.nixosModules.steam
