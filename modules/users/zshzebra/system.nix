@@ -10,7 +10,7 @@
         extraGroups = [
           "wheel"
           "docker"
-          "libvirt"
+          "libvirtd"
           "uinput"
           "dialout"
         ];
