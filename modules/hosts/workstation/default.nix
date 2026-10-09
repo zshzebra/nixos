@@ -32,6 +32,7 @@
       self.nixosModules.appimage
       self.nixosModules.vial
       self.nixosModules.fish
+      self.nixosModules.coreboot
     ];
   };
 
