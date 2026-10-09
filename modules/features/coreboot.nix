@@ -3,6 +3,7 @@
     { pkgs, ... }:
     {
       boot.kernelParams = [ "iomem=relaxed" ];
+      boot.initrd.kernelModules = [ "nvme" "md_mod" "raid0" "xfs" ];
       environment.systemPackages = [ pkgs.coreboot-utils ];
       systemd.services.coreboot-boot-ok = {
         wantedBy = [ "graphical.target" ];
