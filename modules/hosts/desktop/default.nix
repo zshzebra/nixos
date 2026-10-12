@@ -16,6 +16,7 @@
       self.nixosModules.userAlex
       self.nixosModules.harmoniaHosts
       self.nixosModules.gnomeRdp
+      self.nixosModules.syncthing
     ];
   };
 
