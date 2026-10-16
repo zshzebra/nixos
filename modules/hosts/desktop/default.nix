@@ -17,6 +17,7 @@
       self.nixosModules.harmoniaHosts
       self.nixosModules.gnomeRdp
       self.nixosModules.syncthing
+      self.nixosModules.appimage
     ];
   };
 
