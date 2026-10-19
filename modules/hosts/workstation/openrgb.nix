@@ -50,10 +50,7 @@
       systemd.services.openrgb-lighting = {
         description = "OpenRGB workstation lighting controller";
         wantedBy = [ "multi-user.target" ];
-        after = [
-          "multi-user.target"
-          "openrgb.service"
-        ];
+        after = [ "openrgb.service" ];
         requires = [ "openrgb.service" ];
         serviceConfig = {
           ExecStartPre = pkgs.writeShellScript "wait-for-openrgb" ''
