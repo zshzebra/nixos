@@ -38,7 +38,13 @@
           };
         }))
       ];
-      boot.kernelModules = [ "nct6687" ];
+      systemd.services.nct6687-load = {
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${pkgs.kmod}/bin/modprobe nct6687";
+        };
+      };
       boot.extraModprobeConfig = ''
         options nct6687 fan_config=msi_alt1
       '';

@@ -38,6 +38,15 @@
         });
       };
 
+      services.udev.extraRules = ''
+        SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0db0", ATTRS{idProduct}=="0076", TAG+="systemd", SYMLINK+="mysticlight"
+      '';
+
+      systemd.services.openrgb = {
+        wants = [ "dev-mysticlight.device" ];
+        after = [ "dev-mysticlight.device" ];
+      };
+
       systemd.services.openrgb-lighting = {
         description = "OpenRGB workstation lighting controller";
         wantedBy = [ "multi-user.target" ];

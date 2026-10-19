@@ -1,11 +1,23 @@
 { lib, ... }:
 {
   flake.nixosModules.quickboot =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       boot.loader.timeout = 0;
 
-      boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_drm" ];
+      boot.initrd.availableKernelModules = [ "nvidia" "nvidia_modeset" "nvidia_drm" ];
+
+      environment.etc."modules-load.d/nixos.conf".source = lib.mkForce (
+        pkgs.writeText "nixos.conf" (lib.concatStringsSep "\n" (lib.remove "nvidia_uvm" config.boot.kernelModules) + "\n")
+      );
+
+      systemd.services.nvidia-uvm-load = {
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${pkgs.kmod}/bin/modprobe nvidia_uvm";
+        };
+      };
 
       services.displayManager.plasma-login-manager.package =
         let
