@@ -18,6 +18,8 @@
       self.nixosModules.gnomeRdp
       self.nixosModules.syncthing
       self.nixosModules.appimage
+      self.nixosModules.tailscale
+
     ];
   };
 
