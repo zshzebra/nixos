@@ -33,6 +33,7 @@
       self.nixosModules.vial
       self.nixosModules.fish
       self.nixosModules.coreboot
+      self.nixosModules.pam_u2f
     ];
   };
 
