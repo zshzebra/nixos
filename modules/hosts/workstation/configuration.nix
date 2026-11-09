@@ -47,7 +47,6 @@
       };
       boot.extraModprobeConfig = ''
         options nct6687 fan_config=msi_alt1
-        options nvidia NVreg_RegistryDwords="RMForceStaticBar1=1;RmForceDisableIomapWC=1"
       '';
 
       networking.hostName = "workstation-E40";

@@ -13,6 +13,7 @@
       self.nixosModules.flatpakWorkaround
       self.nixosModules.workstationConfiguration
       self.nixosModules.workstationOpenrgb
+      self.nixosModules.workstationGpuDma
       self.nixosModules.nvidia
       self.nixosModules.workstationMt7927
       self.nixosModules.cuda
