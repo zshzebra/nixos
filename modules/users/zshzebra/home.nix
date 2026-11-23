@@ -60,12 +60,41 @@
             user.name = "zshzebra";
             user.email = "ryder@retzlaff.family";
             credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
+            alias = {
+              dft = "-c diff.external=difft diff";
+              dlog = "-c diff.external=difft log -p --ext-diff";
+              dshow = "-c diff.external=difft show --ext-diff";
+            };
+            diff = {
+              tool = "difftastic";
+              algorithm = "histogram";
+              colorMoved = "default";
+            };
+            # NOTE: Replace with dfftastic.diff.mode on release-26.11
+            difftool = {
+              prompt = false;
+              difftastic.cmd = ''difft "$LOCAL" "$REMOTE"'';
+            };
+            merge.conflictstyle = "zdiff3";
           };
         };
 
         mergiraf = {
           enable = true;
           enableGitIntegration = true;
+        };
+
+        delta = {
+          enable = true;
+          enableGitIntegration = true;
+          options = {
+            navigate = true;
+            line-numbers = true;
+          };
+        };
+
+        difftastic = {
+          enable = true;
         };
 
         helix = {
